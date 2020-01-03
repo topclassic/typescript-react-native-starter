@@ -4,6 +4,7 @@
     "jsx": "react-native",
     "lib": ["dom", "esnext"],
     "moduleResolution": "node",
+    "target": "es2017",
     "experimentalDecorators": true,
     "noEmit": true,
     "skipLibCheck": true,

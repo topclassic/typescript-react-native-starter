@@ -1,26 +1,20 @@
 import React from "react"
 import AuthStore from "../store"
 import { inject } from "@lib/store"
-import { StyleSheet, Text, View, Button } from "react-native"
+import { StyleSheet, View, Button } from "react-native"
 
 interface props {
   authStore: AuthStore
   navigation: any
 }
 
-function App(props: props) {
+function SignIn(props: props) {
   const { authStore, navigation } = props
   const { navigate } = navigation
 
   return (
     <View style={styles.container}>
-      <Button title={"login"} onPress={() => navigate("User")} />
-      <Button
-        title={"test mobx"}
-        onPress={() => authStore.setAuthentication()}
-      />
-
-      <Text>{authStore.isAuthentication ? "true" : "false"} </Text>
+      <Button title={"login"} onPress={() => authStore.login(navigate)} />
     </View>
   )
 }
@@ -34,4 +28,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default inject("authStore")(App)
+export default inject("authStore")(SignIn)

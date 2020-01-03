@@ -5,7 +5,6 @@ import Route from "./src/route"
 
 function App() {
   const rootStore = initStore()
-  console.log("rootStore", rootStore)
   return (
     <Provider RootStore={rootStore}>
       <Route />

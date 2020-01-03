@@ -1,7 +1,7 @@
 import React from "react"
 import { Button } from "react-native"
 
-function Profile(props) {
+function Profile(props: any) {
   const { navigation } = props
   const { navigate } = navigation
   return (

@@ -1,15 +1,18 @@
 import React from "react"
+import { inject } from "@lib/store"
 import { StyleSheet, Button, Text, View } from "react-native"
 
 function Detail(props: any) {
-  const { navigation } = props
+  const { navigation, userStore } = props
   const { navigate, getParam } = navigation
   const name = getParam("name") || ""
-
   return (
     <View style={styles.container}>
       <Text>{name}</Text>
-      <Button title={"logout"} onPress={() => navigate("Auth")} />
+      <Button
+        title={"logout"}
+        onPress={() => userStore.authStore.logout(navigate)}
+      />
     </View>
   )
 }
@@ -23,4 +26,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Detail
+export default inject("userStore")(Detail)
