@@ -1,6 +1,5 @@
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import { inject } from "@lib/store"
-import { StatusBar, ActivityIndicator, View } from "react-native"
 import AuthStore from "../store"
 
 interface props {
@@ -17,12 +16,7 @@ const AuthLoading = (props: props) => {
     getToken(navigate)
   }, [])
 
-  return (
-    <View>
-      <ActivityIndicator />
-      <StatusBar barStyle="default" />
-    </View>
-  )
+  return
 }
 
 export default inject("authStore")(AuthLoading)
