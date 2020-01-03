@@ -4,12 +4,14 @@
     "jsx": "react-native",
     "lib": ["dom", "esnext"],
     "moduleResolution": "node",
+    "experimentalDecorators": true,
     "noEmit": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "baseUrl": "src",
     "paths": {
       "@features/*": ["features/*"],
+      "@lib/*": ["lib/*"]
     }
   }
 }

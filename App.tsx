@@ -1,16 +1,16 @@
 import React from "react"
-import { StyleSheet, Text, View } from "react-native"
-import Auth from "@features/auth"
+import { Provider } from "mobx-react"
+import { initStore } from "@lib/store"
+import Route from "./src/route"
 
-export default function App() {
-  return <Auth />
+function App() {
+  const rootStore = initStore()
+  console.log("rootStore", rootStore)
+  return (
+    <Provider RootStore={rootStore}>
+      <Route />
+    </Provider>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-})
+export default App
